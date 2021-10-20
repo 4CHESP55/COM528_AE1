@@ -1,61 +1,67 @@
 # Use Cases and Feature list
 ## Feature list
-1. Feature
-- Sub Feature
-- Sub Feature
-2. Feature
-- Sub Feature
-3. Feature
-- Sub Feature
-- Sub Feature
-4. Feature
-5. Feature
+1. Shop Owner Login
+- Known code to start program
+- Device setup - inital setup
+2. Purchasing goods
+- Check with bank card exists
+- Check if funds exist
+- Validate Transaction
+- Charge extra if Amex
+- Error Message
+3. Return of goods
+- Check with bank card exists
+- Validate Transaction
+- Check if shop funds exist
+4. Shop Owner Logout
+5. Possible off button
+
 
 ## Use Cases
-### [Case Name]
+### Owner Login
 |                        |      |
 | :---                   | :--- |
-| **Description:**       | Description of use case     
-| **Actors:**            | Actors
-| **Preconditions:**     | Preconditions
-| **Postconditions:**    | Postconditions
-| **Flow:**              | Flow
-| **Alternative Flows:** | Alternative Flows
-| **Exceptions:**        | Execptions
-| **Requirements:**      | Requirements
-### [Case Name]
+| **Description:**       | Shop Owner Login to system    
+| **Actors:**            | Shop Owner
+| **Preconditions:**     | System not logged in
+| **Postconditions:**    | System logged in
+| **Flow:**              | Shop Owner logs in using known code
+| **Alternative Flows:** | Error message if wrong code used
+| **Exceptions:**        | not required if machine already logged in
+| **Requirements:**      | If first time login ask shop owner to setup bank details/card for payments to go to
+### Accepted transaction
 |                        |      |
 | :---                   | :--- |
-| **Description:**       | Description of use case     
-| **Actors:**            | Actors
-| **Preconditions:**     | Preconditions
-| **Postconditions:**    | Postconditions
-| **Flow:**              | Flow
-| **Alternative Flows:** | Alternative Flows
-| **Exceptions:**        | Execptions
-| **Requirements:**      | Requirements
-### [Case Name]
+| **Description:**       | Purchasing goods accepted     
+| **Actors:**            | Shop Owner & Customer
+| **Preconditions:**     | Customer wants to buy goods
+| **Postconditions:**    | Customer has bought goods
+| **Flow:**              | Shop owner enters details - accepted from bank 
+| **Alternative Flows:** | 
+| **Exceptions:**        | 
+| **Requirements:**      | Customers card accepted
+### Rejected Transaction
 |                        |      |
 | :---                   | :--- |
-| **Description:**       | Description of use case     
-| **Actors:**            | Actors
-| **Preconditions:**     | Preconditions
-| **Postconditions:**    | Postconditions
-| **Flow:**              | Flow
-| **Alternative Flows:** | Alternative Flows
-| **Exceptions:**        | Execptions
-| **Requirements:**      | Requirements
-### [Case Name]
+| **Description:**       | Purchasing goods rejected
+| **Actors:**            | Shop Owner & Customer
+| **Preconditions:**     | Customer wants to buy goods
+| **Postconditions:**    | Unable to purchase goods
+| **Flow:**              | Shop owner enters details - declined from bank 
+| **Alternative Flows:** | 
+| **Exceptions:**        | 
+| **Requirements:**      | customers card rejected
+### No Wifi/Internet
 |                        |      |
 | :---                   | :--- |
-| **Description:**       | Description of use case     
-| **Actors:**            | Actors
-| **Preconditions:**     | Preconditions
-| **Postconditions:**    | Postconditions
-| **Flow:**              | Flow
-| **Alternative Flows:** | Alternative Flows
-| **Exceptions:**        | Execptions
-| **Requirements:**      | Requirements
+| **Description:**       | Lack of Wifi/Internet    
+| **Actors:**            | Shop owner
+| **Preconditions:**     | Unable to reach Wifi
+| **Postconditions:**    | Error message ststing no internet
+| **Flow:**              | Unable to complete tranaction due to lack of wifi/internet
+| **Alternative Flows:** | 
+| **Exceptions:**        | Wifi/Internte Connected
+| **Requirements:**      | no Internet signal
 ### [Case Name]
 |                        |      |
 | :---                   | :--- |
