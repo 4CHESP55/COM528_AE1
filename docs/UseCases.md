@@ -95,4 +95,14 @@
 | **Alternative Flows:** | Alternative Flows
 | **Exceptions:**        | Execptions
 | **Requirements:**      | Not enough Money in owner account to complete reversal
-
+### Shop owner logout
+|                        |      |
+| :---                   | :--- |
+| **Description:**       | Shop owner logout    
+| **Actors:**            | Owner 
+| **Preconditions:**     | Logged in to system
+| **Postconditions:**    | Logged out of system
+| **Flow:**              | From logged in to logged out of system
+| **Alternative Flows:** | Alternative Flows
+| **Exceptions:**        | Execptions
+| **Requirements:**      | System is logged out after processed followed
