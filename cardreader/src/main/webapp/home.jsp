@@ -9,14 +9,22 @@
 
 <%
     request.setAttribute("selectedPage", "home");
-    String Connection = "Not Connected";
-    String Stage = "Login: ";
+    String Connection = (String) request.getParameter("connection");
+    String Stage = (String) request.getParameter("stage");
     String action = (String) request.getParameter("action");
     String input = (String) request.getParameter("code");
     String login = "";
     String PIN = "";
     String ammount = ""; //change to double
+    String cardNumber = "";
     
+    if (Stage == null) {
+        // Check if properties file has login details and autoatically login (skip to enter amount)
+        Stage = "Login: ";
+    }
+    if (Connection == null) {
+        Connection = "Not Connected";
+    }
     if ("Login: ".equals(action)) {
         
             login = input;
@@ -30,8 +38,15 @@
         }
     else if ("Enter ammount: ".equals(action)){
             ammount = input;
+            Connection = "Connected";
             Stage = "Enter card: ";
-    }
+        }
+    else if ("Enter card: ".equals(action)){
+            cardNumber = input;
+            Connection = "Connected";
+            Stage = "YOU HAVE PAID!! ";
+        }
+    
 %>
 <!DOCTYPE html>
 <html>
@@ -62,9 +77,9 @@
                     <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '9';">9</button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '*';">*</button>
+                    <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '.';">.</button>
                     <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '0';">0</button>
-                    <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '#';">#</button>
+                    <button type="button" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value = document.getElementById('code').value + '-';">-</button>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-danger py-3" onclick="document.getElementById('code').value = document.getElementById('code').value = '';">
