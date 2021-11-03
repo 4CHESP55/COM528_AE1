@@ -11,7 +11,6 @@ package org.solent.oodd.cardreadersystem.model.dto;
 public class CardDetails {
     
     private String uuid=null;
-    private String name=null;
     private String number=null;
     private String cvv=null;
     private String expiry=null;
@@ -21,8 +20,7 @@ public class CardDetails {
         
     }
 
-    public CardDetails(String name, String number, String cvv, String expiry, String issue) {
-        this.name = name;
+    public CardDetails(String number, String cvv, String expiry, String issue) {
         this.number = number;
         this.cvv = cvv;
         this.expiry = expiry;
@@ -36,14 +34,6 @@ public class CardDetails {
 
     public void setUuid(String uuuid) {
         this.uuid = uuuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getNumber() {
@@ -80,7 +70,7 @@ public class CardDetails {
 
     @Override
     public String toString() {
-        return "CardDetails{" + "uuuid=" + uuid + ", name=" + name + ", number=" + number + ", cvv=" + cvv + ", expiry=" + expiry + ", issue=" + issue + "}";
+        return "CardDetails{" + "uuuid=" + uuid + ", number=" + number + ", cvv=" + cvv + ", expiry=" + expiry + ", issue=" + issue + "}";
     }
     
 }
