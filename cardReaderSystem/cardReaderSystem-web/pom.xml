@@ -8,11 +8,11 @@
   </parent>
 
     <groupId>org.solent.oodd</groupId>
-    <artifactId>carReaderSystem-web</artifactId>
+    <artifactId>cardReaderSystem-web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>carReaderSystem-web</name>
+    <name>cardReaderSystem-web</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

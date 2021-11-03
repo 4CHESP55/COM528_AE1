@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.solent.oodd.carreadersystem.web;
+package org.solent.oodd.cardreadersystem.web;
 
 import org.solent.oodd.cardreadersystem.service.CardInterfaceImpl;
 import org.solent.oodd.cardreadersystem.service.TransactionInterfaceImpl;

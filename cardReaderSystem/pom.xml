@@ -17,7 +17,7 @@
             
     <module>cardReaderSystem-service</module>
           
-    <module>carReaderSystem-web</module>
+    <module>cardReaderSystem-web</module>
       
   </modules>
       
