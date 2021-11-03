@@ -16,7 +16,13 @@
     <module>cardReaderSystem-model</module>
             
     <module>cardReaderSystem-service</module>
+<<<<<<< HEAD
     <module>cardReaderSystem-web</module>
+=======
+          
+    <module>cardReaderSystem-web</module>
+      
+>>>>>>> baec8f81cde24680b6cf1a6132ac91143b2ab42d
   </modules>
       
   <properties>

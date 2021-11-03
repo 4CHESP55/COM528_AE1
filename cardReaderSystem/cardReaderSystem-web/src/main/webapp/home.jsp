@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
+<%@ page import="org.solent.oodd.cardreadersystem.model.dto.CardDetails" %>
 
 <%
     request.setAttribute("selectedPage", "home");
