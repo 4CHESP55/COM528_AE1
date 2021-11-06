@@ -10,6 +10,8 @@ import org.solent.oodd.cardreadersystem.service.TransactionInterfaceImpl;
 import org.solent.oodd.cardreadersystem.model.service.CardInterface;
 import org.solent.oodd.cardreadersystem.model.service.TransactionInterface;
 import org.solent.oodd.cardreadersystem.service.ServiceObjectFactory;
+import org.solent.oodd.cardreadersystem.model.dto.TransactionDetails;
+import org.solent.oodd.cardreadersystem.model.dto.CardDetails;
 
 /**
  *
@@ -22,12 +24,20 @@ public class WebObjectFactory {
         
     }
     
-   public static CardInterface getCardInterface(){
+    public static CardInterface getCardInterface(){
         return ServiceObjectFactory.getCardInterface();
     }
     
     public static TransactionInterface getTransactionInterface(){
         return ServiceObjectFactory.getTransactionInterface();
+    }
+    
+    public static CardDetails getCardDetails(){
+        return ServiceObjectFactory.getCardDetails();
+    }
+    
+    public static TransactionDetails getTransactionDetails(){
+        return ServiceObjectFactory.getTransactionDetails();
     }
     
 }

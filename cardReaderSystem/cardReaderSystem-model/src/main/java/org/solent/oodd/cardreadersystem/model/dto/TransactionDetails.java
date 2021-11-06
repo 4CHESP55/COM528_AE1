@@ -13,13 +13,13 @@ public class TransactionDetails {
     private String uuid = null;
     private String toCard = null;
     private String fromCard = null;
-    private Double amount = 0.0;
+    private String amount = null;
     
     public TransactionDetails (){
         
     }
     
-    public TransactionDetails (String toCard, String fromCard, Double amount){
+    public TransactionDetails (String toCard, String fromCard, String amount){
         this.toCard = toCard;
         this.fromCard = fromCard;
         this.amount = amount;
@@ -50,11 +50,11 @@ public class TransactionDetails {
         this.fromCard = fromCard;
     }
     
-    public Double getAmount () {
+    public String getAmount () {
         return amount;
     }
     
-    public void setAmount (String fromCard) {
+    public void setAmount (String amount) {
         this.amount = amount;
     }
 }

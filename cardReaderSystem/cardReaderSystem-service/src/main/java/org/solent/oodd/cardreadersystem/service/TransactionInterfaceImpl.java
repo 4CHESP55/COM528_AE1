@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package org.solent.oodd.cardreadersystem.service;
+import java.util.HashMap;
+import java.util.UUID;
 import org.solent.oodd.cardreadersystem.model.dto.CardDetails;
 import org.solent.oodd.cardreadersystem.model.service.CardInterface;
 import org.solent.oodd.cardreadersystem.model.dto.TransactionDetails;
@@ -14,14 +16,21 @@ import org.solent.oodd.cardreadersystem.model.service.TransactionInterface;
  */
 public class TransactionInterfaceImpl implements TransactionInterface {
 
+    private HashMap<String, TransactionDetails> itemMap = new HashMap<String, TransactionDetails>();
+    
     @Override
-    public void addTransactionDetails(TransactionDetails transactionDetails) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addTransactionDetails(String toCard, String fromCard, String amount) {
+        TransactionDetails transaction = new TransactionDetails();
+        transaction.setToCard(toCard);
+        transaction.setFromCard(fromCard);
+        transaction.setAmount(amount);
+        transaction.setUuid(UUID.randomUUID().toString());
+        itemMap.put(transaction.getUuid(), transaction);
     }
 
     @Override
     public void removeTransactionDetails(String transactionUuid) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        itemMap.remove(transactionUuid);
     }
     
 }

@@ -7,6 +7,8 @@ package org.solent.oodd.cardreadersystem.service;
 
 import org.solent.oodd.cardreadersystem.model.service.CardInterface;
 import org.solent.oodd.cardreadersystem.model.service.TransactionInterface;
+import org.solent.oodd.cardreadersystem.model.dto.CardDetails;
+import org.solent.oodd.cardreadersystem.model.dto.TransactionDetails;
 
 /**
  *
@@ -23,9 +25,16 @@ public class ServiceObjectFactory {
         return new CardInterfaceImpl();
     }
     
+    public static CardDetails getCardDetails(){
+        return new CardDetails();
+    }
+    
     public static TransactionInterface getTransactionInterface(){
         return new TransactionInterfaceImpl();
     }
-
+    
+    public static TransactionDetails getTransactionDetails(){
+        return new TransactionDetails();
+    }
     
 }

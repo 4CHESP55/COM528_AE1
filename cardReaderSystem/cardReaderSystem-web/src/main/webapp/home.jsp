@@ -7,17 +7,31 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.solent.oodd.cardreadersystem.model.dto.CardDetails" %>
+<%@ page import="org.solent.oodd.cardreadersystem.model.dto.TransactionDetails" %>
+<%@ page import="org.solent.oodd.cardreadersystem.web.WebObjectFactory" %>
+<%@ page import="org.solent.oodd.cardreadersystem.model.service.CardInterface" %>
+<%@ page import="org.solent.oodd.cardreadersystem.model.service.TransactionInterface" %>
+<%@ page import="javax.servlet.http.HttpServletRequest" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 
 <%
     request.setAttribute("selectedPage", "home");
+    CardDetails card = (CardDetails) session.getAttribute("card");
+    if (card == null) {
+        card = WebObjectFactory.getCardDetails();
+        session.setAttribute("CardDetails", card);
+    }
+    TransactionDetails transaction = (TransactionDetails) session.getAttribute("transaction");
+    if (transaction == null) {
+        transaction = WebObjectFactory.getTransactionDetails();
+        session.setAttribute("TransactionDetails", transaction);
+    }
     String Connection = (String) request.getParameter("connection");
     String Stage = (String) request.getParameter("stage");
     String action = (String) request.getParameter("action");
     String input = (String) request.getParameter("code");
     String login = "";
     String PIN = "";
-    String ammount = ""; //change to double
-    String cardNumber = "";
     
     if (Stage == null) {
         // Check if properties file has login details and autoatically login (skip to enter amount)
@@ -38,14 +52,14 @@
             Stage = "Enter ammount: ";
         }
     else if ("Enter ammount: ".equals(action)){
-            ammount = input;
+            transaction.setAmount(input);
             Connection = "Connected";
             Stage = "Enter card: ";
         }
     else if ("Enter card: ".equals(action)){
-            cardNumber = input;
+            card.setNumber(input);
             Connection = "Connected";
-            Stage = "YOU HAVE PAID!! ";
+            Stage = transaction.getAmount();
         }
     
 %>
