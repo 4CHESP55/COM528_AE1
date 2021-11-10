@@ -21,10 +21,11 @@
         card = WebObjectFactory.getCardDetails();
         session.setAttribute("CardDetails", card);
     }
-    TransactionDetails transaction = (TransactionDetails) session.getAttribute("transaction");
+    TransactionDetails transaction = (TransactionDetails) session.getAttribute("TransactionDetails");
     if (transaction == null) {
         transaction = WebObjectFactory.getTransactionDetails();
         session.setAttribute("TransactionDetails", transaction);
+        
     }
     String Connection = (String) request.getParameter("connection");
     String Stage = (String) request.getParameter("stage");
@@ -49,9 +50,9 @@
             PIN = input;
             // TODO Use PIN and Login to login
             Connection = "Connected";
-            Stage = "Enter ammount: ";
+            Stage = "Enter amount: ";
         }
-    else if ("Enter ammount: ".equals(action)){
+    else if ("Enter amount: ".equals(action)){
             transaction.setAmount(input);
             Connection = "Connected";
             Stage = "Enter card: ";
@@ -59,9 +60,18 @@
     else if ("Enter card: ".equals(action)){
             card.setNumber(input);
             Connection = "Connected";
-            Stage = transaction.getAmount();
+            Stage = "Enter CVV: ";
         }
-    
+    else if ("Enter CVV: ".equals(action)){
+            card.setCvv(input);
+            Connection = "Connected";
+            Stage = "Enter Expiry: ";
+    }
+    else if ("Enter Expiry: ".equals(action)){
+            card.setExpiry(input);
+            Connection = "Connected";
+            Stage = transaction.getAmount();
+    }
 %>
 <!DOCTYPE html>
 <html>
