@@ -21,10 +21,11 @@
         card = WebObjectFactory.getCardInterface();
         session.setAttribute("CardDetails", card);
     }
-    TransactionInterface transaction = (TransactionInterface) session.getAttribute("transaction");
+    TransactionDetails transaction = (TransactionDetails) session.getAttribute("TransactionDetails");
     if (transaction == null) {
         transaction = WebObjectFactory.getTransactionInterface();
         session.setAttribute("TransactionDetails", transaction);
+        
     }
     //String Connection = (String) request.getParameter("connection");
     //String Stage = (String) request.getParameter("stage");
@@ -48,7 +49,16 @@
             
             // TODO: use transaction object to send to bank
         }
-    
+    else if ("Enter CVV: ".equals(action)){
+            card.setCvv(input);
+            Connection = "Connected";
+            Stage = "Enter Expiry: ";
+    }
+    else if ("Enter Expiry: ".equals(action)){
+            card.setExpiry(input);
+            Connection = "Connected";
+            Stage = transaction.getAmount();
+    }
 %>
 <!DOCTYPE html>
 <html>
