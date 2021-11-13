@@ -13,28 +13,16 @@ import org.solent.oodd.cardreadersystem.model.service.CardInterface;
  * @author Admin
  */
 public class CardInterfaceImpl implements CardInterface {
-    
-    private HashMap<String, CardDetails> itemMap = new HashMap<String, CardDetails>(); 
-    
+        
     @Override
-    public void addCard(CardDetails CardDetails) {
-        itemMap.put(CardDetails.getUuid(), CardDetails);
-    }
-    
-    @Override
-    public void addCardDetails(String number, String cvv, String expiry, String issue) {
-        CardDetails toCard = new CardDetails();
-        toCard.setNumber(number);
-        toCard.setCvv(cvv);
-        toCard.setExpiry(expiry);
-        toCard.setIssue(issue);
-        toCard.setUuid(UUID.randomUUID().toString());
-        itemMap.put(toCard.getUuid(), toCard);
+    public CardDetails addCardDetails(String number, String cvv, String expiry, String issue) {
+        CardDetails card = new CardDetails();
+        card.setNumber(number);
+        card.setCvv(cvv);
+        card.setExpiry(expiry);
+        card.setIssue(issue);
+        return card;
     }
 
-    @Override
-    public void removeCardDetails(String cardUuid) {
-        itemMap.remove(cardUuid);
-    }
     
 }

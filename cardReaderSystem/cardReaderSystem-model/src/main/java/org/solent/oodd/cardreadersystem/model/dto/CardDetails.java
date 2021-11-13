@@ -10,38 +10,34 @@ package org.solent.oodd.cardreadersystem.model.dto;
  */
 public class CardDetails {
     
-    private String uuid=null;
-    private String number=null;
-    private String cvv=null;
-    private String expiry=null;
-    private String issue=null;
+    private String name="";
+    private String endDate="";
+    private String cardnumber="";
+    private String cvv="111";
+    private String issueNumber="01";
     
-    public CardDetails(){
-        
+       public String getName() {
+        return name;
     }
 
-    public CardDetails(String number, String cvv, String expiry, String issue) {
-        this.number = number;
-        this.cvv = cvv;
-        this.expiry = expiry;
-        this.issue = issue;
+    public void setName(String name) {
+        this.name = name;
     }
 
-
-    public String getUuid() {
-        return uuid;
+    public String getExpiry() {
+        return endDate;
     }
 
-    public void setUuid(String uuuid) {
-        this.uuid = uuuid;
+    public void setExpiry(String endDate) {
+        this.endDate = endDate;
     }
 
     public String getNumber() {
-        return number;
+        return cardnumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNumber(String cardnumber) {
+        this.cardnumber = cardnumber;
     }
 
     public String getCvv() {
@@ -51,26 +47,19 @@ public class CardDetails {
     public void setCvv(String cvv) {
         this.cvv = cvv;
     }
-    
-    public String getExpiry() {
-        return expiry;
-    }
 
-    public void setExpiry(String expiry) {
-        this.expiry = expiry;
-    }
-    
     public String getIssue() {
-        return issue;
+        return issueNumber;
     }
 
-    public void setIssue(String issue) {
-        this.issue = issue;
+    public void setIssue(String issueNumber) {
+        this.issueNumber = issueNumber;
     }
 
     @Override
     public String toString() {
-        return "CardDetails{" + "uuuid=" + uuid + ", number=" + number + ", cvv=" + cvv + ", expiry=" + expiry + ", issue=" + issue + "}";
+        return "CreditCard{" + "name=" + name + ", endDate=" + endDate + ", cardnumber=" + cardnumber + ", cvv=NOT PRINTED" +  ", issueNumber=" + issueNumber + '}';
     }
+
     
 }

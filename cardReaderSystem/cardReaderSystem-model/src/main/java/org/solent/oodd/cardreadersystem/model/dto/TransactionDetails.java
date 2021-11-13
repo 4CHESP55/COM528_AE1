@@ -10,51 +10,38 @@ package org.solent.oodd.cardreadersystem.model.dto;
  */
 public class TransactionDetails {
     
-    private String uuid = null;
-    private String toCard = null;
-    private String fromCard = null;
-    private String amount = null;
-    
-    public TransactionDetails (){
-        
-    }
-    
-    public TransactionDetails (String toCard, String fromCard, String amount){
-        this.toCard = toCard;
-        this.fromCard = fromCard;
-        this.amount = amount;
-        
-    }
-    
-    public String getUuid() {
-        return uuid;
-    }
+    private CardDetails fromCard;
 
-    public void setUuid(String uuuid) {
-        this.uuid = uuuid;
-    }
-    
-    public String getToCard () {
-        return toCard;
-    }
-    
-    public void setToCard (String toCard) {
-        this.toCard = toCard;
-    }
-    
-    public String getFromCard () {
+    private CardDetails toCard;
+
+    private String amount;
+
+    public CardDetails getFromCard() {
         return fromCard;
     }
-    
-    public void setFromCard (String fromCard) {
+
+    public void setFromCard(CardDetails fromCard) {
         this.fromCard = fromCard;
     }
-    
-    public String getAmount () {
+
+    public CardDetails getToCard() {
+        return toCard;
+    }
+
+    public void setToCard(CardDetails toCard) {
+        this.toCard = toCard;
+    }
+
+    public String getAmount() {
         return amount;
     }
-    
-    public void setAmount (String amount) {
+
+    public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "TransactionRequestMessage{" + "fromCard=" + fromCard + ", toCard=" + toCard + ", amount=" + amount + '}';
     }
 }

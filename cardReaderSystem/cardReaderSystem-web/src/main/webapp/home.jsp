@@ -4,15 +4,15 @@
     Author     : cgallen
 --%>
 
+<%@page import="java.util.List" %>
+<%@page import="org.solent.oodd.cardreadersystem.model.dto.CardDetails" %>
+<%@page import="org.solent.oodd.cardreadersystem.model.dto.TransactionDetails" %>
+<%@page import="org.solent.oodd.cardreadersystem.web.WebObjectFactory" %>
+<%@page import="org.solent.oodd.cardreadersystem.model.service.CardInterface" %>
+<%@page import="org.solent.oodd.cardreadersystem.model.service.TransactionInterface" %>
+<%@page import="org.solent.oodd.cardreadersystem.web.PropertiesDao" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.util.List" %>
-<%@ page import="org.solent.oodd.cardreadersystem.model.dto.CardDetails" %>
-<%@ page import="org.solent.oodd.cardreadersystem.model.dto.TransactionDetails" %>
-<%@ page import="org.solent.oodd.cardreadersystem.web.WebObjectFactory" %>
-<%@ page import="org.solent.oodd.cardreadersystem.model.service.CardInterface" %>
-<%@ page import="org.solent.oodd.cardreadersystem.model.service.TransactionInterface" %>
-<%@ page import="javax.servlet.http.HttpServletRequest" %>
-<%@ page import="javax.servlet.http.HttpSession" %>
+
 
 <%
     request.setAttribute("selectedPage", "home");
@@ -39,15 +39,23 @@
     String cardIssue = (String) request.getParameter("cardIssue");
     
     // TODO: check details if there is a login save else ask for login and pin
-    // TODO: retrieve toCard details from settings file
+    PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+    String url = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.url");
+    String username = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.username");
+    String password = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.password");
+    String toName = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.cardName");
+    String toNo = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.creditCard");
+    String toExpiry = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.expiry");
+    String toCvv = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.cvv");
+    String toIssue = propertiesDao.getProperty("org.solent.ood.simplepropertiesdaowebapp.issueNumber");
+    
+    CardDetails toCard = card.addCardDetails(toNo, toCvv, toExpiry, toIssue);
     if ("submit".equals(submit)) {
-            // Create card object
-            card.addCardDetails(cardNo, cardCvv, cardExpiry, cardIssue);
-            
-            // TODO: get card details to greate object for transaction
-            //transaction.addTransactionDetails(toCard, fromCard, amount);
-            
-            // TODO: use transaction object to send to bank
+        // Create card object
+        CardDetails fromCard = card.addCardDetails(cardNo, cardCvv, cardExpiry, cardIssue);
+        TransactionDetails newTransaction = transaction.addTransactionDetails(toCard, fromCard, amount);
+        transaction.sendTransaction(url, newTransaction);
+        
         }
 %>
 <!DOCTYPE html>

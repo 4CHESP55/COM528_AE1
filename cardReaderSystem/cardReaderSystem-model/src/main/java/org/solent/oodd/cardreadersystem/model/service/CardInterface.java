@@ -11,7 +11,5 @@ import org.solent.oodd.cardreadersystem.model.dto.CardDetails;
  * @author Admin
  */
 public interface CardInterface {
-    public void addCard (CardDetails CardDetails);
-    public void addCardDetails(String number, String cvv, String expiry, String issue);
-    public void removeCardDetails(String cardUuid);
+    public CardDetails addCardDetails(String number, String cvv, String expiry, String issue);
 }

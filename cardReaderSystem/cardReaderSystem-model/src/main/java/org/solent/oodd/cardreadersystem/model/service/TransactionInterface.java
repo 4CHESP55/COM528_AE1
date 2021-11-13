@@ -5,12 +5,13 @@
 package org.solent.oodd.cardreadersystem.model.service;
 
 import org.solent.oodd.cardreadersystem.model.dto.TransactionDetails;
+import org.solent.oodd.cardreadersystem.model.dto.CardDetails;
 
 /**
  *
  * @author Admin
  */
 public interface TransactionInterface {
-    public void addTransactionDetails(String toCard, String fromCard, String amount);
-    public void removeTransactionDetails(String transactionUuid);
+    public TransactionDetails addTransactionDetails(CardDetails toCard, CardDetails fromCard, String amount);
+    public void sendTransaction(String url, TransactionDetails newTransaction);
 }
