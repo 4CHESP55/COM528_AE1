@@ -63,5 +63,8 @@
 
             <button class="btn" type="submit" >Update Properties</button>
         </form> 
+            
+        <a href="home.jsp"> To Card Machine</a>
+            
     </body>
 </html>
