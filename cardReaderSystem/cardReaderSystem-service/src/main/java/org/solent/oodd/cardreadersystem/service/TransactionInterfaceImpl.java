@@ -58,8 +58,7 @@ public class TransactionInterfaceImpl implements TransactionInterface {
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);        
        
         invocationBuilder.post(Entity.entity(newTransaction, MediaType.APPLICATION_JSON));
-        
-        
+              
 
     }
     
