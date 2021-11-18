@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"org.solent.oodd.NewCardReaderSystem.web","l":"PropertiesDao"},{"p":"org.solent.oodd.NewCardReaderSystem.web","l":"WebObjectFactory"}]
