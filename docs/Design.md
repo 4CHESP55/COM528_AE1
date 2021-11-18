@@ -9,16 +9,3 @@ This doccument is intended as a reference to the design of the credit card reade
 ## UI design
 ![Shop Owner Login](Shop_Owner_Entry_Page.png)
 ![Card Machine](Card_Machine.png)
-## Pseudo Code 
-### Part 1 of application
-```
-This is a code block
-```
-### Part 2 of application
-```
-This is a code block
-```
-### Part 3 of application
-```
-This is a code block
-```
