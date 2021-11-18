@@ -27,3 +27,5 @@ hs_err_pid*
 /cardReaderSystem/cardReaderSystem-web/target/
 /cardReaderSystem/client/target/
 /NewCardReaderSystem/target/
+/NewCardReaderSystem/client/target/
+/NewCardReaderSystem/web/target/
