@@ -34,7 +34,7 @@
             <groupId>org.solent.oodd</groupId>
             <artifactId>client</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <type>jar</type>
+            <type>compile</type>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
