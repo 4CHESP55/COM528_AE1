@@ -22,8 +22,12 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /cardreader/target/
-/cardReaderSystem/carReaderSystem-web/target/
 /cardReaderSystem/cardReaderSystem-model/target/
 /cardReaderSystem/cardReaderSystem-service/target/
 /cardReaderSystem/cardReaderSystem-web/target/
 /cardReaderSystem/client/target/
+/NewCardReaderSystem/target/
+/NewCardReaderSystem/client/target/
+!/NewCardReaderSystem/client/target/site/
+/NewCardReaderSystem/web/target/
+!/NewCardReaderSystem/web/target/site/

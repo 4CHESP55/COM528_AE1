@@ -41,8 +41,8 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link <% if ("home".equals(request.getAttribute("selectedPage"))) {%> active"  <% } else {%> " <%} %> href="./home.jsp">Home</a> 
-                            <a class="nav-link <% if ("about".equals(request.getAttribute("selectedPage"))) {%>  active"  <% } else {%> " <%} %> href="./about.jsp">About</a>
-                            <a class="nav-link <% if ("contact".equals(request.getAttribute("selectedPage"))) {%>  active"  <% } else {%> " <%} %> href="./contact.jsp">Contact</a>                        
+                            <a class="nav-link <% if ("cardReader".equals(request.getAttribute("selectedPage"))) {%> active"  <% } else {%> " <%} %> href="./cardReader.jsp">Card Reader</a> 
+                            <a class="nav-link <% if ("settings".equals(request.getAttribute("selectedPage"))) {%>  active"  <% } else {%> " <%} %> href="./settings.jsp">Settings</a>
                         </div>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
