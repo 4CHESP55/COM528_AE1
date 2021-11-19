@@ -7,14 +7,12 @@
 - Check with bank card exists
 - Check if funds exist
 - Validate Transaction
-- Charge extra if Amex
 - Error Message
 3. Return of goods
 - Check with bank card exists
 - Validate Transaction
 - Check if shop funds exist
 4. Shop Owner Logout
-5. Possible off button
 
 
 ## Use Cases
@@ -57,7 +55,7 @@
 | **Description:**       | Lack of Wifi/Internet    
 | **Actors:**            | Shop owner
 | **Preconditions:**     | Unable to reach Wifi
-| **Postconditions:**    | Error message ststing no internet
+| **Postconditions:**    | Error message stating no internet
 | **Flow:**              | Unable to complete tranaction due to lack of wifi/internet
 | **Alternative Flows:** | 
 | **Exceptions:**        | Wifi/Internte Connected
